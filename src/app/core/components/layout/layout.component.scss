@@ -1,0 +1,86 @@
+@import '@nebular/theme/styles/global/breakpoints';
+@import '@nebular/theme/styles/theming';
+@import '../../../../assets/styles/themes.scss';
+
+nb-layout-header {
+  background-color: nb-theme(color-primary);
+  display: flex;
+  align-items: center;
+
+  a {
+    color: nb-theme(color-fg);
+    font-size: 1.5rem;
+  }
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: nb-theme(color-fg-muted);
+}
+
+@media screen and (max-width: nb-breakpoint(md)) {
+  nb-layout-column {
+    padding: 1rem;
+  }
+}
+
+::ng-deep nb-sidebar .main-container-fixed {
+    top: 0.3rem !important; 
+
+}
+
+nb-sidebar {
+    width: 3.5rem; /* Tamaño compacto inicial */
+    transition: width 0.5s ease; /* Transición suave para el ancho */
+  
+    &.expanded {
+      width: 15rem; /* Tamaño expandido del sidebar */
+    }
+  
+    &.compacted {
+      width: 3.5rem; /* Tamaño compacto */
+    }
+  
+    .sidebar-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4; /* Color de fondo opcional para el header del sidebar */
+      margin-bottom: 2rem;
+
+      .logo {
+        max-width: 120px; /* Ajusta el tamaño del logo */
+        height: auto;
+        opacity: 1;
+        transition: opacity 0.3s ease; 
+      }
+  
+      /* Logo desaparecerá cuando se compacte el sidebar */
+      &.compacted .logo {
+        opacity: 0;
+      }
+  
+      nb-icon {
+        font-size: 24px;
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Transición suave para el ícono */
+      }
+    }
+  }
+  
+  /* Transición suave para el contenido principal */
+  nb-layout-column {
+    transition: margin-left 0.3s ease;
+  
+    /* Ajuste del margen dependiendo del estado del sidebar */
+    &.expanded {
+      margin-left: 15rem; /* Mueve el contenido cuando el sidebar esté expandido */
+    }
+  
+    &.compacted {
+      margin-left: 3.5rem; /* Mueve el contenido cuando el sidebar esté compactado */
+    }
+  }
+  
