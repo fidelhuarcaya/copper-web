@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/copper"
+  publish = "dist/copper/browser"
   command = "npm run build:ssr"
 
 [[redirects]]
