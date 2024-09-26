@@ -26,7 +26,6 @@
     "@angular/ssr": "^17.3.9",
     "@nebular/eva-icons": "13.0.0",
     "@nebular/theme": "^13.0.0",
-    "@nguniversal/express-engine": "^16.2.0",
     "bootstrap": "^5.3.3",
     "copper": "file:",
     "eva-icons": "^1.1.3",
