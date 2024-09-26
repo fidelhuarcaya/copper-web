@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "build:ssr": "ng build && ng run copper:server",
+    "serve:ssr": "node dist/copper/server/main.js",
     "serve:ssr:copper": "node dist/copper/server/server.mjs"
   },
   "private": true,

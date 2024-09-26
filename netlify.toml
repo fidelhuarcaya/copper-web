@@ -1,5 +1,6 @@
 [build]
   publish = "dist/copper"
+  command = "npm run build:ssr"
 
 [[redirects]]
   from = "/*"

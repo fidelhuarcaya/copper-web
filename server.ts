@@ -54,3 +54,4 @@ function run(): void {
 }
 
 run();
+export * from './src/main.server';
