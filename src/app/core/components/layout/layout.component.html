@@ -1,24 +1,10 @@
-<nb-layout windowMode>
-    <nb-layout-header subheader>
-    </nb-layout-header>
-
+<nb-layout windowMode>       
+    <nb-layout-header fixed subheader>
+            <a href="#" (click)="toggle()"><nb-icon class="nb-menu"></nb-icon></a>
+          </nb-layout-header>
     <!-- Sidebar -->
-    <nb-sidebar #sidebar state="compacted" responsive (stateChange)="onSidebarToggle($event)">
-        <!-- Contenedor del logo y el botón del sidebar -->
-        <div class="sidebar-header">
-            <!-- Logo que se muestra solo cuando el sidebar está expandido -->
-            @if (isSidebarExpanded) {
-            <img src="https://static-cse.canva.com/blob/951786/1750logotiposqueteinspiraran.jpg" class="logo">
-            }
-
-
-            <!-- Botón para toggle del sidebar -->
-            <a href="#" (click)="toggleSidebar($event)">
-                <nb-icon [icon]="isSidebarExpanded ? 'arrow-ios-back-outline' : 'menu-outline'"></nb-icon>
-            </a>
-        </div>
-
-        <!-- Menú -->
+    <nb-sidebar>
+ 
         <nb-menu [items]="menu">
         </nb-menu>
     </nb-sidebar>

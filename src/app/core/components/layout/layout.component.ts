@@ -40,10 +40,6 @@ export class LayoutComponent {
           title: 'Lista de Usuarios',
           link: '/users',
         },
-        {
-          title: 'Crear Usuario',
-          link: '/users/create',
-        },
       ],
     },
     {
@@ -65,5 +61,9 @@ export class LayoutComponent {
   // Detecta el cambio de estado del sidebar
   onSidebarToggle(state: string) {
     this.isSidebarExpanded = state === 'expanded'; // Verifica si el sidebar está expandido
+  }
+  toggle() {
+    this.sidebarService.toggle(true);
+    return false;
   }
 }

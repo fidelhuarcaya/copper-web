@@ -8,9 +8,9 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // add auth header with jwt if user is logged in and request is to the api url
     const currentUser = this.authService.currentUserValue;
     const isLoggedIn = currentUser && currentUser.token;
+
     if (isLoggedIn) {
       request = request.clone({
         setHeaders: {
